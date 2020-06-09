@@ -1,0 +1,10 @@
+.App {
+	text-align: center;
+}
+
+.hidden { display:none; }
+
+.svg-size{
+	height:50 !important; 
+	width:100 !important;
+}
