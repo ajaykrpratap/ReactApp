@@ -34,7 +34,7 @@ class App extends React.Component {
 	}
 
 	getSupervisseList() {
-		const response = axios.get('http://localhost:8080/api/supervisee')
+		const response = axios.get('http://nodeapp-env.eba-ctkbm3qp.us-east-1.elasticbeanstalk.com/api/supervisee')
 			.then(res => {
 				const response = res.data;
 				this.setState({ superviseeList: response });
@@ -42,7 +42,7 @@ class App extends React.Component {
 	}
 
 	getO3SuperviseeDetails(OracleId) {
-		const response = axios.get('http://localhost:8080/api/o3SuperviseeDetails/'+OracleId)
+		const response = axios.get('http://nodeapp-env.eba-ctkbm3qp.us-east-1.elasticbeanstalk.com/api/o3SuperviseeDetails/'+OracleId)
 			.then(res => {
 				const response = res.data;
 				this.setState({ existingDetails: response });
@@ -74,7 +74,7 @@ class App extends React.Component {
 
 	submitValues = () => {
 		const OracleId =  this.state.OracleId;
-		const response = axios.post('http://localhost:8080/api/save03detail/'+OracleId, this.state.rows).then(res => {
+		const response = axios.post('http://nodeapp-env.eba-ctkbm3qp.us-east-1.elasticbeanstalk.com/api/save03detail/'+OracleId, this.state.rows).then(res => {
 			this.getO3SuperviseeDetails(this.state.OracleId);
 			let existingDetails =  this.state.existingDetails;
 			existingDetails.concat(this.state.rows);
